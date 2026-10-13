@@ -19,7 +19,7 @@ const SUGGESTIONS: Record<string, string[]> = {
   research: ["Who are the top competitors in AI meeting notes apps, and how do they price?"],
 };
 
-export function ThreadView({ threadId, onNeedKey }: { threadId: string; onNeedKey: () => void }) {
+export function ThreadView({ threadId, onNeedKey, onEdit }: { threadId: string; onNeedKey: () => void; onEdit: (a: Agent) => void }) {
   const thread = useWorkspace((s) => s.threads[threadId]);
   const agents = useWorkspace((s) => s.org.agents);
   const demo = useWorkspace((s) => s.demo);
@@ -81,11 +81,22 @@ export function ThreadView({ threadId, onNeedKey }: { threadId: string; onNeedKe
             <p className="text-xs text-muted">A conversation between your agents. You&apos;re watching it live.</p>
           </div>
         )}
-        {thread.busy && isDm && !demo && (
-          <button onClick={() => stopThread(thread.id)} className="ml-auto rounded-lg border border-line px-3 py-1.5 text-sm hover:bg-accent-soft">
-            Stop
-          </button>
-        )}
+        <div className="ml-auto flex shrink-0 items-center gap-2">
+          {thread.busy && isDm && !demo && (
+            <button onClick={() => stopThread(thread.id)} className="rounded-lg border border-line px-3 py-1.5 text-sm hover:bg-accent-soft">
+              Stop
+            </button>
+          )}
+          {isDm && responder && (
+            <button
+              onClick={() => onEdit(responder)}
+              className="rounded-lg border border-line px-3 py-1.5 text-sm hover:bg-accent-soft"
+              title={`Rename ${responder.name}, change their role, or remove them`}
+            >
+              Edit
+            </button>
+          )}
+        </div>
       </header>
 
       <div

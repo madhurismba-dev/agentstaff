@@ -86,7 +86,7 @@ export default function Home() {
         )}
 
         <div className="min-h-0 flex-1">
-          {view.kind === "thread" && <ThreadView key={view.threadId} threadId={view.threadId} onNeedKey={needKey} />}
+          {view.kind === "thread" && <ThreadView key={view.threadId} threadId={view.threadId} onNeedKey={needKey} onEdit={(a) => setEditing(a)} />}
           {view.kind === "org" && <OrgChart onEdit={(a) => setEditing(a)} onHire={() => setEditing(null)} />}
           {view.kind === "board" && <TaskBoard />}
         </div>

@@ -43,7 +43,7 @@ export function OrgChart({ onEdit, onHire }: { onEdit: (a: Agent) => void; onHir
           </button>
           <button
             onClick={() => onEdit(agent)}
-            className="absolute top-1.5 right-1.5 rounded px-1.5 text-xs text-muted opacity-0 group-hover:opacity-100 hover:bg-accent-soft focus:opacity-100"
+            className="absolute top-1.5 right-1.5 rounded px-1.5 text-xs text-muted hover:bg-accent-soft hover:text-ink"
             aria-label={`Edit ${agent.name}`}
           >
             Edit
