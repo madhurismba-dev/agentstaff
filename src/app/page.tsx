@@ -65,7 +65,7 @@ export default function Home() {
           <button onClick={() => setNavOpen(true)} className="rounded-md px-2 py-1 text-lg" aria-label="Open navigation">
             ☰
           </button>
-          <span className="font-semibold">ChiefOS</span>
+          <span className="font-semibold">AgentStaff</span>
         </div>
 
         {demo && (

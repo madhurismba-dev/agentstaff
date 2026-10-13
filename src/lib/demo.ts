@@ -4,7 +4,7 @@ import { TEMPLATES, cloneOrg } from "./templates";
 import type { AuthorId } from "./types";
 
 /**
- * The sample workspace: a scripted replay of what a real ChiefOS session looks like, so anyone can
+ * The sample workspace: a scripted replay of what a real AgentStaff session looks like, so anyone can
  * see it work without an API key. The text is pre-written for illustration; no API calls are made.
  */
 

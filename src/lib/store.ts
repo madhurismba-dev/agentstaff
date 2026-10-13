@@ -9,8 +9,9 @@ import type { AuthorId, BoardTask, ChatMessage, Org, Settings, Thread, Usage, Vi
  * and components subscribe with useWorkspace(). Real workspaces persist to localStorage; the demo doesn't.
  */
 
-const STATE_KEY = "chiefos:workspace:v1";
-const KEY_KEY = "chiefos:apiKey";
+const STATE_KEY = "agentstaff:workspace:v1";
+const KEY_KEY = "agentstaff:apiKey";
+const LEGACY = { "chiefos:workspace:v1": STATE_KEY, "chiefos:apiKey": KEY_KEY };   // the app's earlier name
 
 /** One-click presets. New workspaces start on Balanced so a first run never surprises anyone. */
 export const COST_MODES = {
@@ -96,6 +97,11 @@ function save() {
 /** Load the saved workspace. Returns false when there is none (first visit). */
 export function loadSaved(): boolean {
   try {
+    for (const [old, now] of Object.entries(LEGACY)) {
+      const v = localStorage.getItem(old);
+      if (v !== null && localStorage.getItem(now) === null) localStorage.setItem(now, v);
+      if (v !== null) localStorage.removeItem(old);
+    }
     const raw = localStorage.getItem(STATE_KEY);
     const apiKey = localStorage.getItem(KEY_KEY) ?? "";
     if (!raw) {

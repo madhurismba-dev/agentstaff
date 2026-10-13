@@ -27,7 +27,7 @@ export function Sidebar({ onSettings, onHire, onNavigate }: { onSettings: () => 
       <div className="border-b border-white/8 px-4 py-4">
         <div className="flex items-center gap-2 text-[15px] font-semibold text-white">
           <span className="grid h-7 w-7 place-items-center rounded-lg bg-indigo-500 text-sm">⌘</span>
-          ChiefOS
+          AgentStaff
           {anyBusy && <span className="working-dot ml-auto h-2 w-2 rounded-full bg-emerald-400" title="Agents working" />}
         </div>
         <div className="mt-1 truncate text-xs text-sidebar-muted">{s.org.name}</div>

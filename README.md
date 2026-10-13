@@ -1,17 +1,17 @@
-# ChiefOS · manage an AI team like an org chart
+# AgentStaff · manage an AI team like an org chart
 
 *An AI agent management app, built in Claude Code.*
 
 **Chat with your AI chief of staff, product manager, engineer and CFO in parallel, and watch them work with each other.**
 
-ChiefOS is a workspace laid out like Slack, where every employee is an AI agent. You're the CEO. Pick anyone in the
+AgentStaff is a workspace laid out like Slack, where every employee is an AI agent. You're the CEO. Pick anyone in the
 left nav and start a conversation. Ask your CFO about runway while your product manager writes a PRD. Hand your
 chief of staff a goal and watch them delegate it: they message the PM, the CFO and marketing **at the same time**,
 the PM pulls in the engineer for an estimate, tasks land on a shared board, and you get one recommendation back.
 
 Every agent-to-agent conversation is its own thread you can open and read. Nothing happens in a black box.
 
-![ChiefOS: an AI team you manage like an org chart](docs/screenshots/hero.png)
+![AgentStaff: an AI team you manage like an org chart](docs/screenshots/hero.png)
 
 > **Try it without an API key:** the app opens with a sample workspace that replays a full session.
 
@@ -161,10 +161,10 @@ subscribe with `useSyncExternalStore`.
 
 ## Privacy and cost
 
-- **There is no ChiefOS server.** The app is a static site. Your Anthropic API key is saved in your browser's
+- **There is no AgentStaff server.** The app is a static site. Your Anthropic API key is saved in your browser's
   local storage and sent only to `api.anthropic.com`. Conversations are stored only in your browser.
 - Calling the API directly from a browser requires the SDK's `dangerouslyAllowBrowser` flag. That's appropriate
-  here because it's **your own key on your own device**. Don't deploy ChiefOS with a shared key baked in.
+  here because it's **your own key on your own device**. Don't deploy AgentStaff with a shared key baked in.
 - You pay Anthropic directly for usage. The sidebar shows an estimate and how much input came from the cache.
   Delegation multiplies calls, so a goal handed to the chief of staff costs more than a single chat. Every request
   has a hard budget (Settings), and Economy mode runs a full team request for about a cent.
@@ -174,8 +174,8 @@ subscribe with `useSyncExternalStore`.
 You need Node.js 20+ and an Anthropic API key ([get one here](https://platform.claude.com/settings/keys)).
 
 ```bash
-git clone https://github.com/madhurismba-dev/chiefos.git
-cd chiefos
+git clone https://github.com/madhurismba-dev/agentstaff.git
+cd agentstaff
 npm install
 npm run dev
 ```

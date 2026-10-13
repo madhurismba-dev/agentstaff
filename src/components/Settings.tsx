@@ -34,7 +34,7 @@ export function Settings({ onClose, reason }: { onClose: () => void; reason?: st
     const blob = new Blob([JSON.stringify(rest, null, 2)], { type: "application/json" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = `chiefos-workspace-${new Date().toISOString().slice(0, 10)}.json`;
+    a.download = `agentstaff-workspace-${new Date().toISOString().slice(0, 10)}.json`;
     a.click();
     URL.revokeObjectURL(a.href);
   };
@@ -64,7 +64,7 @@ export function Settings({ onClose, reason }: { onClose: () => void; reason?: st
           <a className="text-accent underline" href="https://platform.claude.com/settings/keys" target="_blank" rel="noopener noreferrer">
             platform.claude.com
           </a>
-          . Your key is stored only in this browser and sent only to Anthropic. ChiefOS has no server. You pay
+          . Your key is stored only in this browser and sent only to Anthropic. AgentStaff has no server. You pay
           Anthropic directly for what you use; the sidebar shows an estimate.
         </p>
       </section>

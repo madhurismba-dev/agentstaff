@@ -5,7 +5,7 @@ import { dmId, teamId } from "./store";
 import type { Agent, ModelId, Usage } from "./types";
 
 /**
- * ChiefOS engine.
+ * AgentStaff engine.
  *
  * Every thread is its own Claude conversation (like a separate Claude Code session). The CEO can talk to
  * several agents at once, and agents can message each other with the `message_colleague` tool. That call
